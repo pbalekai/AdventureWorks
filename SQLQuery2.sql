@@ -59,7 +59,7 @@ WHERE soh.SalesPersonID=276)
 GROUP BY a.PostalCode
 
 
---Number of distinct buyers based n postal code
+--Number of distinct buyers based on postal code
 SELECT a.PostalCode, COUNT(vw.PostalCode) as DistinctBuyers
 FROM  Sales.vIndividualCustomer vw 
 INNER JOIN (SELECT DISTINCT customerID, personID, TerritoryID FROM Sales.Customer) c on vw.BusinessEntityID = c.PersonID
